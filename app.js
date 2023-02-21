@@ -10,7 +10,13 @@ const app = Vue.createApp({
         newTodo: ''
       }
     },
-    methods: {      
+    methods: {
+      addTodo() {
+        if (this.newTodo) {
+          this.todos.push({ text: this.newTodo, done: false });
+          this.newTodo = '';
+        }
+      },
       removeTodo(index) {
         this.todos.splice(index, 1);
       }
