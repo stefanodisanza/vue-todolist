@@ -7,6 +7,17 @@
     <title>Vue To Do List</title>
 </head>
 <body>
-    
+    <div id="app">
+        <h1>Todo List</h1>
+        <ul>
+          <li v-for="(todo, index) in todos" :key="index">
+            <span :class="{ 'done': todo.done }">{{ todo.text }}</span>
+            <button @click="removeTodo(index)">x</button>
+          </li>
+        </ul>
+        
+      </div>
+      <script src="https://unpkg.com/vue@next"></script>
+      <script src="app.js"></script>
 </body>
 </html>
